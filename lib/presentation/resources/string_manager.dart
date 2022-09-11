@@ -16,6 +16,7 @@ class AppStrings {
 
   static const skip = "Skip";
   static const username = "Username";
+  static const email = "Email";
   static const password = "Password";
   static const usernameError = "Please enter your userName";
   static const passwordError = "Please enter your password";
@@ -26,4 +27,16 @@ class AppStrings {
   static const loading = "Loading...";
   static const retryAgain = "Retry again";
   static const ok = "Ok";
+
+  static const userNameInvalid = "User name should be least 3 chars";
+  static const emailInvalid = "Email formate is wrong";
+  static const mobileNumberInvalid = "Mobile Number should be least 9 chars";
+  static const passwordInvalid = "Password should be least 6 chars";
+  static const alreadyHaveAccount = "Already have an account ? Login";
+  static const register = "Register";
+  static const mobileNumber = "Mobile Number";
+  static const proflePicture = "Profle picture";
+
+  static const photoGallery = "Photo from gallery";
+  static const photoCamera = "Photo from camera";
 }

@@ -2,13 +2,16 @@ import 'package:advanced_flutter/data/data_sourse/remotr_data_sourse.dart';
 import 'package:advanced_flutter/data/network/app_api.dart';
 import 'package:advanced_flutter/data/network/dio_factory.dart';
 import 'package:advanced_flutter/data/network/network_info.dart';
-import 'package:advanced_flutter/data/repository/repository.dart';
+import 'package:advanced_flutter/data/repository/repository_impl.dart';
 import 'package:advanced_flutter/domain/repository/repository.dart';
 import 'package:advanced_flutter/domain/usecase/forgot_usecase.dart';
 import 'package:advanced_flutter/domain/usecase/login_usecase.dart';
+import 'package:advanced_flutter/domain/usecase/register_usecase.dart';
 import 'package:advanced_flutter/presentation/forgot_password/viewModel/forgot_password_viewmodel.dart';
 import 'package:advanced_flutter/presentation/login/viewmodel/login_viewmodel.dart';
+import 'package:advanced_flutter/presentation/register/view_model/register_viewmodel.dart';
 import 'package:dio/dio.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 
 import '../app/app_preferences.dart';
@@ -50,13 +53,28 @@ Future<void> initAppModule() async {
       RepositoryImpl(remoteDataSourse: instance(), networckInfo: instance()));
 }
 
+void initForgetModule() {
+  if (!GetIt.I.isRegistered<ForgotUsecase>()) {
+    instance.registerFactory<ForgotUsecase>(() => ForgotUsecase(instance()));
+    instance
+        .registerFactory<ForgetViewModel>(() => ForgetViewModel(instance()));
+  }
+}
+
 void initLoginModule() {
   if (!GetIt.I.isRegistered<LoginUsecase>()) {
     instance.registerFactory<LoginUsecase>(() => LoginUsecase(instance()));
     instance.registerFactory<LoginViewModel>(() => LoginViewModel(instance()));
+  }
+}
 
-    instance.registerFactory<ForgotUsecase>(() => ForgotUsecase(instance()));
+void initRegisterModule() {
+  if (!GetIt.I.isRegistered<RegisterUsecase>()) {
     instance
-        .registerFactory<ForgetViewModel>(() => ForgetViewModel(instance()));
+        .registerFactory<RegisterUsecase>(() => RegisterUsecase(instance()));
+    instance.registerFactory<RegisterViewModel>(
+        () => RegisterViewModel(instance()));
+
+    instance.registerFactory<ImagePicker>(() => ImagePicker());
   }
 }

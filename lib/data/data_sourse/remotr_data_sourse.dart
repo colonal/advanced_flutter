@@ -5,6 +5,7 @@ import 'package:advanced_flutter/data/response/responses.dart';
 abstract class RemoteDataSourse {
   Future<AuthenticationResponse> login(LoginRequest loginRequest);
   Future<ForgetResponse> forget(ForgotRequest forgotRequest);
+  Future<AuthenticationResponse> register(RegisterRequest registerRequest);
 }
 
 class RemoteDataSourseImpl extends RemoteDataSourse {
@@ -21,5 +22,18 @@ class RemoteDataSourseImpl extends RemoteDataSourse {
   @override
   Future<ForgetResponse> forget(ForgotRequest forgotRequest) async {
     return await appServiceClient.forgot(forgotRequest.email);
+  }
+
+  @override
+  Future<AuthenticationResponse> register(
+      RegisterRequest registerRequest) async {
+    return await appServiceClient.register(
+        registerRequest.email,
+        registerRequest.password,
+        registerRequest.userName,
+        registerRequest.countryMobileCode,
+        registerRequest.mobileNmber,
+        "" // registerRequest.profilePicture,
+        );
   }
 }

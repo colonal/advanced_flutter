@@ -30,6 +30,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   analyzer: ^4.3.1
+  country_list_pick: ^1.0.1+6
   cupertino_icons: ^1.0.2
   dartz: ^0.10.1
   dio: ^4.0.6
@@ -38,6 +39,7 @@ dependencies:
   flutter_svg: ^1.1.1+1
   freezed: ^2.1.0+1
   get_it: ^7.2.0
+  image_picker: ^0.8.5+3
   internet_connection_checker: ^0.0.1+4
   json_serializable: ^6.3.1
   lottie: ^1.4.2

@@ -3,7 +3,7 @@ import 'package:advanced_flutter/presentation/forgot_password/view/forgot_passwo
 import 'package:advanced_flutter/presentation/login/view/lodin_view.dart';
 import 'package:advanced_flutter/presentation/main/main_view.dart';
 import 'package:advanced_flutter/presentation/on_boarding/view/on_bparding_view.dart';
-import 'package:advanced_flutter/presentation/register/register_view.dart';
+import 'package:advanced_flutter/presentation/register/view/register_view.dart';
 import 'package:advanced_flutter/presentation/resources/string_manager.dart';
 import 'package:advanced_flutter/presentation/splash/splash_view.dart';
 import 'package:advanced_flutter/presentation/store_details/store_details_view.dart';
@@ -30,8 +30,10 @@ class RouteGenerator {
         initLoginModule();
         return MaterialPageRoute(builder: (_) => const LoginView());
       case Routes.registerRout:
+        initRegisterModule();
         return MaterialPageRoute(builder: (_) => const RegisterView());
       case Routes.forgotPaswwordRoute:
+        initForgetModule();
         return MaterialPageRoute(builder: (_) => const ForgotPassworedView());
       case Routes.mainRoute:
         return MaterialPageRoute(builder: (_) => const MainView());

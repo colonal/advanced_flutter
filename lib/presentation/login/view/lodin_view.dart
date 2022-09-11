@@ -27,7 +27,6 @@ class _LoginViewState extends State<LoginView> {
   final AppsPreferences _appsPreferences = instance<AppsPreferences>();
 
   _bind() {
-    _appsPreferences.setUserLoggedIn();
     _viewModel.start(); // tell viewmodel, start ur job
     _userNameController
         .addListener(() => _viewModel.setUserName(_userNameController.text));
@@ -37,6 +36,7 @@ class _LoginViewState extends State<LoginView> {
     _viewModel.isUserLoggedInSuccessfullyStreamController.stream
         .listen((isLoggedIn) {
       SchedulerBinding.instance.addPersistentFrameCallback((_) {
+        _appsPreferences.setUserLoggedIn();
         Navigator.of(context).pushReplacementNamed(Routes.mainRoute);
       });
     });
@@ -149,7 +149,7 @@ class _LoginViewState extends State<LoginView> {
                     children: [
                       TextButton(
                         onPressed: () {
-                          Navigator.pushReplacementNamed(
+                          Navigator.pushNamed(
                               context, Routes.forgotPaswwordRoute);
                         },
                         child: Text(AppStrings.forgetPassword,
@@ -157,8 +157,7 @@ class _LoginViewState extends State<LoginView> {
                       ),
                       TextButton(
                         onPressed: () {
-                          Navigator.pushReplacementNamed(
-                              context, Routes.registerRout);
+                          Navigator.pushNamed(context, Routes.registerRout);
                         },
                         child: Text(AppStrings.registerText,
                             style: Theme.of(context).textTheme.titleMedium),
