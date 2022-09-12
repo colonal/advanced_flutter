@@ -9,4 +9,5 @@ abstract class Repository {
       ForgotRequest forgotRequest);
   Future<Either<Failure, Authentication>> register(
       RegisterRequest registerRequest);
+  Future<Either<Failure, HomeObject>> getHomeData();
 }

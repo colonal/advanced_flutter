@@ -6,6 +6,7 @@ abstract class RemoteDataSourse {
   Future<AuthenticationResponse> login(LoginRequest loginRequest);
   Future<ForgetResponse> forget(ForgotRequest forgotRequest);
   Future<AuthenticationResponse> register(RegisterRequest registerRequest);
+  Future<HomeResponse> getHomeData();
 }
 
 class RemoteDataSourseImpl extends RemoteDataSourse {
@@ -35,5 +36,10 @@ class RemoteDataSourseImpl extends RemoteDataSourse {
         registerRequest.mobileNmber,
         "" // registerRequest.profilePicture,
         );
+  }
+
+  @override
+  Future<HomeResponse> getHomeData() async {
+    return await appServiceClient.getHomeData();
   }
 }

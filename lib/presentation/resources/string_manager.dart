@@ -39,4 +39,10 @@ class AppStrings {
 
   static const photoGallery = "Photo from gallery";
   static const photoCamera = "Photo from camera";
+  static const home = "Hoem";
+  static const search = "Search";
+  static const notification = "Notification";
+  static const setting = "Setting";
+  static const services = "";
+  static const stores = "Stores";
 }
