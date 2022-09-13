@@ -180,7 +180,8 @@ class _HomePageState extends State<HomePage> {
               children: List.generate(stores.length, (index) {
                 return InkWell(
                   onTap: () {
-                    Navigator.of(context).pushNamed(Routes.storeDetailsRoute);
+                    Navigator.of(context)
+                        .pushNamed(Routes.storeDetailsRoute, arguments: "1");
                   },
                   child: Card(
                     elevation: AppSize.s4,

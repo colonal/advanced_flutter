@@ -6,7 +6,7 @@ import 'package:advanced_flutter/presentation/on_boarding/view/on_bparding_view.
 import 'package:advanced_flutter/presentation/register/view/register_view.dart';
 import 'package:advanced_flutter/presentation/resources/string_manager.dart';
 import 'package:advanced_flutter/presentation/splash/splash_view.dart';
-import 'package:advanced_flutter/presentation/store_details/store_details_view.dart';
+import 'package:advanced_flutter/presentation/store_details/view/store_details_view.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
@@ -21,6 +21,7 @@ class Routes {
 
 class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings settings) {
+    final arguments = settings.arguments;
     switch (settings.name) {
       case Routes.splashRoute:
         return MaterialPageRoute(builder: (_) => const SplashView());
@@ -39,6 +40,8 @@ class RouteGenerator {
         initHomeModule();
         return MaterialPageRoute(builder: (_) => const MainView());
       case Routes.storeDetailsRoute:
+        initStoreDetails(arguments as String? ?? "1");
+
         return MaterialPageRoute(builder: (_) => const StoreDetailsView());
 
       default:

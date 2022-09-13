@@ -109,3 +109,21 @@ class HomeObject {
   HomeData data;
   HomeObject(this.data);
 }
+
+class StoreDetails {
+  int id;
+
+  String title;
+  String details;
+  String image;
+  String services;
+  String about;
+  StoreDetails({
+    required this.id,
+    required this.title,
+    required this.image,
+    required this.details,
+    required this.about,
+    required this.services,
+  });
+}

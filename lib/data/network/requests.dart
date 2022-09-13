@@ -30,3 +30,9 @@ class RegisterRequest {
     required this.profilePicture,
   });
 }
+
+class StoreDetailsRequst {
+  final String id;
+
+  StoreDetailsRequst(this.id);
+}

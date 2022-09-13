@@ -1,6 +1,7 @@
 import 'package:advanced_flutter/data/data_sourse/local_data_source.dart';
 import 'package:advanced_flutter/data/network/error_handler.dart';
 import 'package:advanced_flutter/data/network/network_info.dart';
+import 'package:advanced_flutter/data/response/responses.dart';
 import 'package:dartz/dartz.dart';
 
 import 'package:advanced_flutter/data/data_sourse/remotr_data_sourse.dart';
@@ -96,6 +97,37 @@ class RepositoryImpl extends Repository {
 
           if (response.status == ApiInternalStatus.SUCCESS) {
             localDataSource.saveHomeToCache(response);
+            return Right(response.toDomain());
+          } else {
+            return Left(Failure(ApiInternalStatus.FALURE,
+                response.message ?? ResponseMessage.DEFAULT));
+          }
+        } catch (error) {
+          return Left(ErrorHandler.handle(error).failure);
+        }
+      }
+
+      return Left(DataSource.NO_INTERNET_CONNECTION.getFailure());
+    }
+  }
+
+  @override
+  Future<Either<Failure, StoreDetails>> getStoreDetails(
+      StoreDetailsRequst storeDetailsRequst) async {
+    try {
+      // get response from cache
+
+      final StoreDetailsResponse response =
+          await localDataSource.getStoreDetails();
+      return Right(response.toDomain());
+    } catch (cacheError) {
+      if (await networckInfo.isConnected) {
+        try {
+          final response =
+              await remoteDataSourse.getStoreDetails(storeDetailsRequst.id);
+
+          if (response.status == ApiInternalStatus.SUCCESS) {
+            localDataSource.saveStoreDetails(response);
             return Right(response.toDomain());
           } else {
             return Left(Failure(ApiInternalStatus.FALURE,
