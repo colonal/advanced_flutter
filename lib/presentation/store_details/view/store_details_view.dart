@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 
 import '../../../domain/model/models.dart';
 import '../../common/state_renderer/state_renderer_impl.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class StoreDetailsView extends StatefulWidget {
   const StoreDetailsView({Key? key}) : super(key: key);
@@ -44,7 +45,7 @@ class _StoreDetailsViewState extends State<StoreDetailsView> {
       backgroundColor: ColorManager.white,
       appBar: AppBar(
         title: Text(
-          _title ?? AppStrings.storeDetails,
+          _title ?? AppStrings.storeDetails.tr(),
           style: theme.textTheme.titleSmall,
         ),
       ),
@@ -95,13 +96,16 @@ class _StoreDetailsViewState extends State<StoreDetailsView> {
                 ),
                 const SizedBox(height: AppSize.s30),
                 _buildItime(
-                    title: AppStrings.details, body: snapshot.data!.details),
+                    title: AppStrings.details.tr(),
+                    body: snapshot.data!.details),
                 const SizedBox(height: AppSize.s20),
                 _buildItime(
-                    title: AppStrings.services, body: snapshot.data!.services),
+                    title: AppStrings.services.tr(),
+                    body: snapshot.data!.services),
                 const SizedBox(height: AppSize.s20),
                 _buildItime(
-                    title: AppStrings.aboutStore, body: snapshot.data!.about),
+                    title: AppStrings.aboutStore.tr(),
+                    body: snapshot.data!.about),
                 const SizedBox(height: AppSize.s40),
               ],
             ),

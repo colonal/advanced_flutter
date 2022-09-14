@@ -8,6 +8,7 @@ import 'package:advanced_flutter/presentation/resources/string_manager.dart';
 import 'package:advanced_flutter/presentation/resources/values_manager.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -64,9 +65,9 @@ class _HomePageState extends State<HomePage> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               _getBannerWidget(snapshot.data!.banners),
-              _getSection(AppStrings.services),
+              _getSection(AppStrings.services.tr()),
               _getServiceWidget(snapshot.data!.services),
-              _getSection(AppStrings.stores),
+              _getSection(AppStrings.stores.tr()),
               _getStoreWidget(snapshot.data!.stores),
             ],
           );

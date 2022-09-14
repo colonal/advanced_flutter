@@ -35,8 +35,10 @@ dependencies:
   cupertino_icons: ^1.0.2
   dartz: ^0.10.1
   dio: ^4.0.6
+  easy_localization: ^3.0.1
   flutter:
     sdk: flutter
+  flutter_phoenix: ^1.1.0
   flutter_svg: ^1.1.1+1
   freezed: ^2.1.0+1
   get_it: ^7.2.0
@@ -77,7 +79,13 @@ flutter:
     - assets/images/solid_circle_ic.svg
     - assets/images/left_arrow_ic.svg
     - assets/images/right_arrow_ic.svg
+    - assets/images/change_lang_ic.svg
+    - assets/images/contact_us_ic.svg
+    - assets/images/invite_friends_ic.svg
+    - assets/images/logout_ic.svg
+    - assets/images/settings_right_arrow_ic.svg
     - assets/json/
+    - assets/translations/
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

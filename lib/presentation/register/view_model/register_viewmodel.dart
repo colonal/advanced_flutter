@@ -9,6 +9,7 @@ import 'package:advanced_flutter/presentation/resources/string_manager.dart';
 
 import '../../common/state_renderer/state_renderer.dart';
 import '../../common/state_renderer/state_renderer_impl.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class RegisterViewModel extends BaseViewModel
     with RegisterViewModelInput, RegisterViewModelOutput {
@@ -74,7 +75,7 @@ class RegisterViewModel extends BaseViewModel
   @override
   Stream<String?> get outputErrorUserName =>
       outputIsUserNameValid.map((isUserName) {
-        return isUserName ? null : AppStrings.userNameInvalid;
+        return isUserName ? null : AppStrings.userNameInvalid.tr();
       });
 
   @override
@@ -82,7 +83,7 @@ class RegisterViewModel extends BaseViewModel
       emailStreamController.stream.map((email) => isEmailValid(email));
   @override
   Stream<String?> get outputErrorEmail => outputIsEmailValid.map((isEmail) {
-        return isEmail ? null : AppStrings.emailInvalid;
+        return isEmail ? null : AppStrings.invalidEmail.tr();
       });
 
   @override
@@ -90,8 +91,9 @@ class RegisterViewModel extends BaseViewModel
       mobileNumberStreamController.stream
           .map((mobilNumber) => _isMobileNumberValid(mobilNumber));
   @override
-  Stream<String?> get outputErrorMobileNumber => outputIsMobileNumberValid.map(
-      (isMobilNumber) => isMobilNumber ? null : AppStrings.mobileNumberInvalid);
+  Stream<String?> get outputErrorMobileNumber =>
+      outputIsMobileNumberValid.map((isMobilNumber) =>
+          isMobilNumber ? null : AppStrings.mobileNumberInvalid.tr());
 
   @override
   Stream<bool> get outputIsPasswordValid => passwordStreamController.stream
@@ -99,7 +101,7 @@ class RegisterViewModel extends BaseViewModel
 
   @override
   Stream<String?> get outputErrorPassword => outputIsPasswordValid
-      .map((isPassword) => isPassword ? null : AppStrings.passwordInvalid);
+      .map((isPassword) => isPassword ? null : AppStrings.passwordInvalid.tr());
 
   @override
   Stream<File> get outputIsProfilePictureValid =>

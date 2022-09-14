@@ -4,6 +4,7 @@ import 'package:advanced_flutter/presentation/forgot_password/viewModel/forgot_p
 import 'package:advanced_flutter/presentation/resources/color_manager.dart';
 import 'package:advanced_flutter/presentation/resources/string_manager.dart';
 import 'package:flutter/material.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 import '../../resources/assets_manager.dart';
 
@@ -82,11 +83,11 @@ class _ForgotPassworedViewState extends State<ForgotPassworedView> {
                         keyboardType: TextInputType.emailAddress,
                         controller: _userNameController,
                         decoration: InputDecoration(
-                            hintText: AppStrings.email,
-                            labelText: AppStrings.email,
+                            hintText: AppStrings.emailHint.tr(),
+                            labelText: AppStrings.emailHint.tr(),
                             errorText: (snapshot.data ?? true)
                                 ? null
-                                : AppStrings.usernameError),
+                                : AppStrings.usernameError.tr()),
                       );
                     }),
               ),
@@ -108,7 +109,7 @@ class _ForgotPassworedViewState extends State<ForgotPassworedView> {
                                     _viewModel.forget();
                                   }
                                 : null,
-                            child: const Text(AppStrings.forgetPassword)),
+                            child: Text(AppStrings.forgetPassword.tr())),
                       );
                     }),
               ),

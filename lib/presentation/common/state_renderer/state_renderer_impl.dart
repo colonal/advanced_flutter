@@ -15,6 +15,7 @@ abstract class FlowState {
 class ForgotState extends FlowState {
   final StateRendererType stateRendererType;
   final String message;
+
   ForgotState({
     required this.stateRendererType,
     this.message = AppStrings.loading,

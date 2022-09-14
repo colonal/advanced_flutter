@@ -12,6 +12,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../domain/model/models.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class OnBpBpardingView extends StatefulWidget {
   const OnBpBpardingView({Key? key}) : super(key: key);
@@ -91,7 +92,7 @@ class _OnBpBpardingViewState extends State<OnBpBpardingView> {
                   Navigator.of(context).pushReplacementNamed(Routes.loginRoute);
                 },
                 child: Text(
-                  AppStrings.skip,
+                  AppStrings.skip.tr(),
                   textAlign: TextAlign.end,
                   style: Theme.of(context).textTheme.titleMedium,
                 ),

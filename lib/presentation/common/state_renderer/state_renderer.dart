@@ -6,6 +6,7 @@ import 'package:advanced_flutter/presentation/resources/styles_manager.dart';
 import 'package:advanced_flutter/presentation/resources/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 enum StateRendererType {
   //  POPUP STATES (IDALOG)
@@ -50,7 +51,7 @@ class StateRenderer extends StatelessWidget {
         return _getPopUpDialog(context, [
           _getAnimatedImage(JsonAssets.error),
           _getMessage(message),
-          _getReteyButton(AppStrings.ok, context),
+          _getReteyButton(AppStrings.ok.tr(), context),
         ]);
       case StateRendererType.fullScreenLoadingState:
         return _getItemColumn(
@@ -60,7 +61,7 @@ class StateRenderer extends StatelessWidget {
         return _getItemColumn([
           _getAnimatedImage(JsonAssets.error),
           _getMessage(message),
-          _getReteyButton(AppStrings.retryAgain, context)
+          _getReteyButton(AppStrings.retryAgain.tr(), context)
         ]);
       case StateRendererType.fullScreenEmptyState:
         return _getItemColumn(
@@ -71,13 +72,13 @@ class StateRenderer extends StatelessWidget {
         return _getPopUpDialog(context, [
           _getAnimatedImage(JsonAssets.error),
           _getMessage(message),
-          _getReteyButton(AppStrings.ok, context),
+          _getReteyButton(AppStrings.ok.tr(), context),
         ]);
       case StateRendererType.fullScreenInfo:
         return _getItemColumn([
           _getAnimatedImage(JsonAssets.success),
           _getMessage(message),
-          _getReteyButton(AppStrings.ok, context)
+          _getReteyButton(AppStrings.ok.tr(), context)
         ]);
     }
     return Container();
