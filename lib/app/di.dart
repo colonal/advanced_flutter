@@ -8,11 +8,13 @@ import 'package:advanced_flutter/domain/repository/repository.dart';
 import 'package:advanced_flutter/domain/usecase/forgot_usecase.dart';
 import 'package:advanced_flutter/domain/usecase/home_usecase.dart';
 import 'package:advanced_flutter/domain/usecase/login_usecase.dart';
+import 'package:advanced_flutter/domain/usecase/notification_usecase.dart';
 import 'package:advanced_flutter/domain/usecase/register_usecase.dart';
 import 'package:advanced_flutter/domain/usecase/store_details_usecase.dart';
 import 'package:advanced_flutter/presentation/forgot_password/viewModel/forgot_password_viewmodel.dart';
 import 'package:advanced_flutter/presentation/login/viewmodel/login_viewmodel.dart';
 import 'package:advanced_flutter/presentation/main/pages/home/viewmodel/home_viewmodel.dart';
+import 'package:advanced_flutter/presentation/main/pages/notification/viewmodel/notification_viewmodel.dart';
 import 'package:advanced_flutter/presentation/register/view_model/register_viewmodel.dart';
 import 'package:advanced_flutter/presentation/store_details/viewmodel/store_details_viewmodel.dart';
 import 'package:dio/dio.dart';
@@ -103,5 +105,14 @@ void initStoreDetails(String id) {
         () => StoreDetailsUsecase(instance()));
     instance.registerFactory<StoreDetailsViewModel>(
         () => StoreDetailsViewModel(usecase: instance(), id: id));
+  }
+}
+
+void initNotification() {
+  if (!GetIt.I.isRegistered<NotificationUsecase>()) {
+    instance.registerFactory<NotificationUsecase>(
+        () => NotificationUsecase(repository: instance()));
+    instance.registerFactory<NotificationVewmodel>(
+        () => NotificationVewmodel(usecase: instance()));
   }
 }

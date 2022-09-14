@@ -36,4 +36,7 @@ abstract class AppServiceClient {
   Future<StoreDetailsResponse> getStoreDetails(
     @Path() String uid,
   );
+
+  @GET("/notification")
+  Future<NotificationResponse> getNotification();
 }

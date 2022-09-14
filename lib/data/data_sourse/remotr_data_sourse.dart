@@ -8,6 +8,7 @@ abstract class RemoteDataSourse {
   Future<AuthenticationResponse> register(RegisterRequest registerRequest);
   Future<HomeResponse> getHomeData();
   Future<StoreDetailsResponse> getStoreDetails(String id);
+  Future<NotificationResponse> getNotification();
 }
 
 class RemoteDataSourseImpl extends RemoteDataSourse {
@@ -47,5 +48,10 @@ class RemoteDataSourseImpl extends RemoteDataSourse {
   @override
   Future<StoreDetailsResponse> getStoreDetails(String id) async {
     return await appServiceClient.getStoreDetails(id);
+  }
+
+  @override
+  Future<NotificationResponse> getNotification() async {
+    return await appServiceClient.getNotification();
   }
 }

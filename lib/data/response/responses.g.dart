@@ -184,3 +184,42 @@ Map<String, dynamic> _$StoreDetailsResponseToJson(
       'services': instance.services,
       'about': instance.about,
     };
+
+NotificationResponse _$NotificationResponseFromJson(
+        Map<String, dynamic> json) =>
+    NotificationResponse(
+      (json['data'] as List<dynamic>?)
+          ?.map((e) =>
+              NotificationDataResponse.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    )
+      ..status = json['status'] as int?
+      ..message = json['message'] as String?;
+
+Map<String, dynamic> _$NotificationResponseToJson(
+        NotificationResponse instance) =>
+    <String, dynamic>{
+      'status': instance.status,
+      'message': instance.message,
+      'data': instance.data,
+    };
+
+NotificationDataResponse _$NotificationDataResponseFromJson(
+        Map<String, dynamic> json) =>
+    NotificationDataResponse(
+      json['image'] as String?,
+      json['body'] as String?,
+      json['date'] as String?,
+      json['state'] as String?,
+      json['title'] as String?,
+    );
+
+Map<String, dynamic> _$NotificationDataResponseToJson(
+        NotificationDataResponse instance) =>
+    <String, dynamic>{
+      'image': instance.image,
+      'title': instance.title,
+      'body': instance.body,
+      'date': instance.date,
+      'state': instance.state,
+    };

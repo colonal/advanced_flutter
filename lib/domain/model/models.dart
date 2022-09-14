@@ -1,3 +1,5 @@
+import 'package:advanced_flutter/data/mapper/mapper.dart';
+
 class SliderObject {
   final String title;
   final String subTitle;
@@ -126,4 +128,24 @@ class StoreDetails {
     required this.about,
     required this.services,
   });
+}
+
+class NotificationObject {
+  List<NotificationData> data;
+  NotificationObject(this.data);
+}
+
+class NotificationData {
+  final String image;
+  final String title;
+  final String body;
+  final String date;
+  final StateNotification state;
+
+  NotificationData(this.image, this.title, this.body, this.date, this.state);
+}
+
+enum StateNotification {
+  discount,
+  newServise;
 }

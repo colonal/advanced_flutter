@@ -202,3 +202,43 @@ class StoreDetailsResponse extends BaseResponse {
 
   Map<String, dynamic> toJson() => _$StoreDetailsResponseToJson(this);
 }
+
+@JsonSerializable()
+class NotificationResponse extends BaseResponse {
+  @JsonKey(name: "data")
+  List<NotificationDataResponse>? data;
+  NotificationResponse(
+    this.data,
+  );
+
+  factory NotificationResponse.fromJson(Map<String, dynamic> json) =>
+      _$NotificationResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _$NotificationResponseToJson(this);
+}
+
+@JsonSerializable()
+class NotificationDataResponse {
+  @JsonKey(name: "image")
+  String? image;
+  @JsonKey(name: "title")
+  String? title;
+  @JsonKey(name: "body")
+  String? body;
+  @JsonKey(name: "date")
+  String? date;
+  @JsonKey(name: "state")
+  String? state;
+  NotificationDataResponse(
+    this.image,
+    this.body,
+    this.date,
+    this.state,
+    this.title,
+  );
+
+  factory NotificationDataResponse.fromJson(Map<String, dynamic> json) =>
+      _$NotificationDataResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _$NotificationDataResponseToJson(this);
+}

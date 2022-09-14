@@ -116,3 +116,30 @@ extension StoreDetailsMapper on StoreDetailsResponse? {
     );
   }
 }
+
+extension NotificationMepper on NotificationResponse {
+  NotificationObject toDomain() {
+    List<NotificationData> notificationData = data
+            ?.map((data) => NotificationData(
+                  data.image ?? Constants.empty,
+                  data.title ?? Constants.empty,
+                  data.body ?? Constants.empty,
+                  data.date ?? Constants.empty,
+                  _getState(data.state ?? Constants.empty),
+                ))
+            .toList() ??
+        const Iterable.empty().cast<NotificationData>().toList();
+    return NotificationObject(notificationData);
+  }
+
+  StateNotification _getState(String s) {
+    switch (s) {
+      case "discount":
+        return StateNotification.discount;
+      case "new":
+        return StateNotification.newServise;
+      default:
+        return StateNotification.discount;
+    }
+  }
+}

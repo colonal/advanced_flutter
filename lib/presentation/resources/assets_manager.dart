@@ -27,4 +27,6 @@ class JsonAssets {
   static const String empty = "${_jsonPath}empty.json";
   static const String loading = "${_jsonPath}loading.json";
   static const String success = "${_jsonPath}success.json";
+  static const String newServise = "${_jsonPath}new.json";
+  static const String discount = "${_jsonPath}discount.json";
 }
