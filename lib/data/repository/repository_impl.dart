@@ -161,4 +161,25 @@ class RepositoryImpl extends Repository {
 
     return Left(DataSource.NO_INTERNET_CONNECTION.getFailure());
   }
+
+  @override
+  Future<Either<Failure, SearchObject>> getSearch(
+      SearchRequst searchRequst) async {
+    if (await networckInfo.isConnected) {
+      try {
+        final response = await remoteDataSourse.getSearch(searchRequst);
+
+        if (response.status == ApiInternalStatus.SUCCESS) {
+          return Right(response.toDomain());
+        } else {
+          return Left(Failure(ApiInternalStatus.FALURE,
+              response.message ?? ResponseMessage.DEFAULT));
+        }
+      } catch (error) {
+        return Left(ErrorHandler.handle(error).failure);
+      }
+    }
+
+    return Left(DataSource.NO_INTERNET_CONNECTION.getFailure());
+  }
 }

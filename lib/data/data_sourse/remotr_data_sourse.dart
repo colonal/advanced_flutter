@@ -9,6 +9,7 @@ abstract class RemoteDataSourse {
   Future<HomeResponse> getHomeData();
   Future<StoreDetailsResponse> getStoreDetails(String id);
   Future<NotificationResponse> getNotification();
+  Future<SearchResponse> getSearch(SearchRequst searchRequst);
 }
 
 class RemoteDataSourseImpl extends RemoteDataSourse {
@@ -53,5 +54,10 @@ class RemoteDataSourseImpl extends RemoteDataSourse {
   @override
   Future<NotificationResponse> getNotification() async {
     return await appServiceClient.getNotification();
+  }
+
+  @override
+  Future<SearchResponse> getSearch(SearchRequst searchRequst) async {
+    return await appServiceClient.getSearch(searchRequst.search);
   }
 }

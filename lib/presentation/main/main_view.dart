@@ -1,6 +1,6 @@
 import 'package:advanced_flutter/presentation/main/pages/home/view/home_page.dart';
 import 'package:advanced_flutter/presentation/main/pages/notification/view/notification_page.dart';
-import 'package:advanced_flutter/presentation/main/pages/search/search_page.dart';
+import 'package:advanced_flutter/presentation/main/pages/search/view/search_page.dart';
 import 'package:advanced_flutter/presentation/main/pages/setting/setting_page.dart';
 import 'package:advanced_flutter/presentation/resources/color_manager.dart';
 import 'package:advanced_flutter/presentation/resources/string_manager.dart';

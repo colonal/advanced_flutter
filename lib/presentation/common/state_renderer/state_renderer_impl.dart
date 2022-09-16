@@ -100,6 +100,21 @@ class EmptyState extends FlowState {
       StateRendererType.fullScreenEmptyState;
 }
 
+// Loding
+class LoadingProgressState extends FlowState {
+  final StateRendererType stateRendererType;
+
+  LoadingProgressState({
+    required this.stateRendererType,
+  });
+
+  @override
+  String getMessage() => Constants.empty;
+
+  @override
+  StateRendererType getStateRendererTyp() => stateRendererType;
+}
+
 extension FlowStateExtension on FlowState {
   Widget getScreenWidget(BuildContext context, Widget contentScreenWidget,
       Function retryActionFunction) {
@@ -176,6 +191,14 @@ extension FlowStateExtension on FlowState {
             stateRendererType: getStateRendererTyp(),
             message: getMessage(),
             retryActionFunction: () {},
+          );
+        }
+      case LoadingProgressState:
+        {
+          return StateRenderer(
+            stateRendererType: getStateRendererTyp(),
+            retryActionFunction: () {},
+            content: contentScreenWidget,
           );
         }
       case ContentState:

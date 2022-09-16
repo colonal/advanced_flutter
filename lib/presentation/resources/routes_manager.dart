@@ -40,6 +40,7 @@ class RouteGenerator {
       case Routes.mainRoute:
         initHomeModule();
         initNotification();
+        initSearch();
         return MaterialPageRoute(builder: (_) => const MainView());
       case Routes.storeDetailsRoute:
         initStoreDetails(arguments as String? ?? "1");

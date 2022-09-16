@@ -149,3 +149,21 @@ enum StateNotification {
   discount,
   newServise;
 }
+
+class SearchObject {
+  List<SearchData> data;
+  SearchObject(this.data);
+}
+
+class SearchData {
+  int id;
+
+  String title;
+
+  String image;
+  SearchData({
+    required this.id,
+    required this.title,
+    required this.image,
+  });
+}

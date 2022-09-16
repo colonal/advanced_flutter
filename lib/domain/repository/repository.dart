@@ -14,4 +14,5 @@ abstract class Repository {
       StoreDetailsRequst storeDetailsRequst);
 
   Future<Either<Failure, NotificationObject>> getNotification();
+  Future<Either<Failure, SearchObject>> getSearch(SearchRequst searchRequst);
 }

@@ -20,6 +20,9 @@ enum StateRendererType {
   fullScreenEmptyState,
   fullScreenInfo,
 
+  // Widget
+  progressBarWidget,
+
   // general
   contentState,
 }
@@ -29,20 +32,23 @@ class StateRenderer extends StatelessWidget {
   final String message;
   final String title;
   final Function retryActionFunction;
+  final Widget? content;
   const StateRenderer(
       {required this.stateRendererType,
       this.message = AppStrings.loading,
       this.title = "",
       required this.retryActionFunction,
+      this.content,
       Key? key})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return _getStateWidget(message, context);
+    return _getStateWidget(message, context, content: content);
   }
 
-  Widget _getStateWidget(String message, BuildContext context) {
+  Widget _getStateWidget(String message, BuildContext context,
+      {Widget? content}) {
     switch (stateRendererType) {
       case StateRendererType.popupLoadingStat:
         return _getPopUpDialog(
@@ -80,6 +86,8 @@ class StateRenderer extends StatelessWidget {
           _getMessage(message),
           _getReteyButton(AppStrings.ok.tr(), context)
         ]);
+      case StateRendererType.progressBarWidget:
+        return _getProgressBarWidget(context);
     }
     return Container();
   }
@@ -160,6 +168,14 @@ class StateRenderer extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisSize: MainAxisSize.min,
       children: children,
+    );
+  }
+
+  Widget _getProgressBarWidget(BuildContext context) {
+    return LinearProgressIndicator(
+      color: Theme.of(context).primaryColor,
+      backgroundColor: Theme.of(context).disabledColor,
+      minHeight: 10,
     );
   }
 }

@@ -223,3 +223,33 @@ Map<String, dynamic> _$NotificationDataResponseToJson(
       'date': instance.date,
       'state': instance.state,
     };
+
+SearchResponse _$SearchResponseFromJson(Map<String, dynamic> json) =>
+    SearchResponse(
+      (json['data'] as List<dynamic>?)
+          ?.map((e) => SearchDataResponse.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    )
+      ..status = json['status'] as int?
+      ..message = json['message'] as String?;
+
+Map<String, dynamic> _$SearchResponseToJson(SearchResponse instance) =>
+    <String, dynamic>{
+      'status': instance.status,
+      'message': instance.message,
+      'data': instance.data,
+    };
+
+SearchDataResponse _$SearchDataResponseFromJson(Map<String, dynamic> json) =>
+    SearchDataResponse(
+      json['image'] as String?,
+      json['id'] as int?,
+      json['title'] as String?,
+    );
+
+Map<String, dynamic> _$SearchDataResponseToJson(SearchDataResponse instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title': instance.title,
+      'image': instance.image,
+    };

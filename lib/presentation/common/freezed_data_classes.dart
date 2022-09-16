@@ -22,3 +22,8 @@ class RegisterObject with _$RegisterObject {
     String profilePicture,
   ) = _RegisterObject;
 }
+
+@freezed
+class SearchViewmodelObject with _$SearchViewmodelObject {
+  factory SearchViewmodelObject(String seach) = _SearchViewmodelObjectObject;
+}

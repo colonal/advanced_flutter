@@ -482,3 +482,123 @@ abstract class _RegisterObject implements RegisterObject {
   _$$_RegisterObjectCopyWith<_$_RegisterObject> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$SearchViewmodelObject {
+  String get seach => throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $SearchViewmodelObjectCopyWith<SearchViewmodelObject> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SearchViewmodelObjectCopyWith<$Res> {
+  factory $SearchViewmodelObjectCopyWith(SearchViewmodelObject value,
+          $Res Function(SearchViewmodelObject) then) =
+      _$SearchViewmodelObjectCopyWithImpl<$Res>;
+  $Res call({String seach});
+}
+
+/// @nodoc
+class _$SearchViewmodelObjectCopyWithImpl<$Res>
+    implements $SearchViewmodelObjectCopyWith<$Res> {
+  _$SearchViewmodelObjectCopyWithImpl(this._value, this._then);
+
+  final SearchViewmodelObject _value;
+  // ignore: unused_field
+  final $Res Function(SearchViewmodelObject) _then;
+
+  @override
+  $Res call({
+    Object? seach = freezed,
+  }) {
+    return _then(_value.copyWith(
+      seach: seach == freezed
+          ? _value.seach
+          : seach // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$$_SearchViewmodelObjectObjectCopyWith<$Res>
+    implements $SearchViewmodelObjectCopyWith<$Res> {
+  factory _$$_SearchViewmodelObjectObjectCopyWith(
+          _$_SearchViewmodelObjectObject value,
+          $Res Function(_$_SearchViewmodelObjectObject) then) =
+      __$$_SearchViewmodelObjectObjectCopyWithImpl<$Res>;
+  @override
+  $Res call({String seach});
+}
+
+/// @nodoc
+class __$$_SearchViewmodelObjectObjectCopyWithImpl<$Res>
+    extends _$SearchViewmodelObjectCopyWithImpl<$Res>
+    implements _$$_SearchViewmodelObjectObjectCopyWith<$Res> {
+  __$$_SearchViewmodelObjectObjectCopyWithImpl(
+      _$_SearchViewmodelObjectObject _value,
+      $Res Function(_$_SearchViewmodelObjectObject) _then)
+      : super(_value, (v) => _then(v as _$_SearchViewmodelObjectObject));
+
+  @override
+  _$_SearchViewmodelObjectObject get _value =>
+      super._value as _$_SearchViewmodelObjectObject;
+
+  @override
+  $Res call({
+    Object? seach = freezed,
+  }) {
+    return _then(_$_SearchViewmodelObjectObject(
+      seach == freezed
+          ? _value.seach
+          : seach // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SearchViewmodelObjectObject implements _SearchViewmodelObjectObject {
+  _$_SearchViewmodelObjectObject(this.seach);
+
+  @override
+  final String seach;
+
+  @override
+  String toString() {
+    return 'SearchViewmodelObject(seach: $seach)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_SearchViewmodelObjectObject &&
+            const DeepCollectionEquality().equals(other.seach, seach));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(seach));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_SearchViewmodelObjectObjectCopyWith<_$_SearchViewmodelObjectObject>
+      get copyWith => __$$_SearchViewmodelObjectObjectCopyWithImpl<
+          _$_SearchViewmodelObjectObject>(this, _$identity);
+}
+
+abstract class _SearchViewmodelObjectObject implements SearchViewmodelObject {
+  factory _SearchViewmodelObjectObject(final String seach) =
+      _$_SearchViewmodelObjectObject;
+
+  @override
+  String get seach;
+  @override
+  @JsonKey(ignore: true)
+  _$$_SearchViewmodelObjectObjectCopyWith<_$_SearchViewmodelObjectObject>
+      get copyWith => throw _privateConstructorUsedError;
+}

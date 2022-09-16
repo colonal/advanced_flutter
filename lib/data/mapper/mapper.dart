@@ -143,3 +143,16 @@ extension NotificationMepper on NotificationResponse {
     }
   }
 }
+
+extension SearchMapper on SearchResponse {
+  SearchObject toDomain() {
+    List<SearchData> searchData = data
+            ?.map((search) => SearchData(
+                id: search.id ?? Constants.zero,
+                image: search.image ?? Constants.empty,
+                title: search.title ?? Constants.empty))
+            .toList() ??
+        const Iterable.empty().cast<SearchData>().toList();
+    return SearchObject(searchData);
+  }
+}

@@ -36,3 +36,10 @@ class StoreDetailsRequst {
 
   StoreDetailsRequst(this.id);
 }
+
+class SearchRequst {
+  final String search;
+  SearchRequst({
+    required this.search,
+  });
+}

@@ -242,3 +242,38 @@ class NotificationDataResponse {
 
   Map<String, dynamic> toJson() => _$NotificationDataResponseToJson(this);
 }
+
+@JsonSerializable()
+class SearchResponse extends BaseResponse {
+  @JsonKey(name: "data")
+  List<SearchDataResponse>? data;
+  SearchResponse(
+    this.data,
+  );
+
+  factory SearchResponse.fromJson(Map<String, dynamic> json) =>
+      _$SearchResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _$SearchResponseToJson(this);
+}
+
+@JsonSerializable()
+class SearchDataResponse {
+  @JsonKey(name: "id")
+  int? id;
+  @JsonKey(name: "title")
+  String? title;
+  @JsonKey(name: "image")
+  String? image;
+
+  SearchDataResponse(
+    this.image,
+    this.id,
+    this.title,
+  );
+
+  factory SearchDataResponse.fromJson(Map<String, dynamic> json) =>
+      _$SearchDataResponseFromJson(json);
+
+  Map<String, dynamic> toJson() => _$SearchDataResponseToJson(this);
+}

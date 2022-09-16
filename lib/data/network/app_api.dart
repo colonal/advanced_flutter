@@ -39,4 +39,7 @@ abstract class AppServiceClient {
 
   @GET("/notification")
   Future<NotificationResponse> getNotification();
+
+  @GET("/search")
+  Future<SearchResponse> getSearch(@Query("search") String search);
 }
