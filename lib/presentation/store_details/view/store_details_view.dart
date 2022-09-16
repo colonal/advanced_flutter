@@ -1,10 +1,10 @@
-import 'package:advanced_flutter/app/di.dart';
-import 'package:advanced_flutter/presentation/resources/color_manager.dart';
-import 'package:advanced_flutter/presentation/resources/font_manager.dart';
-import 'package:advanced_flutter/presentation/resources/string_manager.dart';
-import 'package:advanced_flutter/presentation/resources/styles_manager.dart';
-import 'package:advanced_flutter/presentation/resources/values_manager.dart';
-import 'package:advanced_flutter/presentation/store_details/viewmodel/store_details_viewmodel.dart';
+import '../../../app/di.dart';
+import '../../resources/color_manager.dart';
+import '../../resources/font_manager.dart';
+import '../../resources/string_manager.dart';
+import '../../resources/styles_manager.dart';
+import '../../resources/values_manager.dart';
+import '../viewmodel/store_details_viewmodel.dart';
 import 'package:flutter/material.dart';
 
 import '../../../domain/model/models.dart';

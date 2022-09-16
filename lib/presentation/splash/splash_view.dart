@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:advanced_flutter/presentation/resources/assets_manager.dart';
-import 'package:advanced_flutter/presentation/resources/color_manager.dart';
-import 'package:advanced_flutter/presentation/resources/constants_manager.dart';
-import 'package:advanced_flutter/presentation/resources/routes_manager.dart';
+import '../resources/assets_manager.dart';
+import '../resources/color_manager.dart';
+import '../resources/constants_manager.dart';
+import '../resources/routes_manager.dart';
 import 'package:flutter/material.dart';
 
 import '../../app/app_preferences.dart';

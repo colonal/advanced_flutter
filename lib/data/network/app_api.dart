@@ -1,5 +1,5 @@
-import 'package:advanced_flutter/app/constants.dart';
-import 'package:advanced_flutter/data/response/responses.dart';
+import '../../app/constants.dart';
+import '../response/responses.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/http.dart';
 part 'app_api.g.dart';

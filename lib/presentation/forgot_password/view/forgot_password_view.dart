@@ -1,8 +1,8 @@
-import 'package:advanced_flutter/app/di.dart';
-import 'package:advanced_flutter/presentation/common/state_renderer/state_renderer_impl.dart';
-import 'package:advanced_flutter/presentation/forgot_password/viewModel/forgot_password_viewmodel.dart';
-import 'package:advanced_flutter/presentation/resources/color_manager.dart';
-import 'package:advanced_flutter/presentation/resources/string_manager.dart';
+import '../../../app/di.dart';
+import '../../common/state_renderer/state_renderer_impl.dart';
+import '../viewModel/forgot_password_viewmodel.dart';
+import '../../resources/color_manager.dart';
+import '../../resources/string_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 

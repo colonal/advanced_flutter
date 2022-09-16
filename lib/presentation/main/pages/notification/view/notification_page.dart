@@ -1,12 +1,14 @@
-import 'package:advanced_flutter/app/di.dart';
-import 'package:advanced_flutter/domain/model/models.dart';
-import 'package:advanced_flutter/presentation/common/state_renderer/state_renderer_impl.dart';
-import 'package:advanced_flutter/presentation/main/pages/notification/viewmodel/notification_viewmodel.dart';
-import 'package:advanced_flutter/presentation/resources/assets_manager.dart';
-import 'package:advanced_flutter/presentation/resources/color_manager.dart';
-import 'package:advanced_flutter/presentation/resources/font_manager.dart';
-import 'package:advanced_flutter/presentation/resources/string_manager.dart';
-import 'package:advanced_flutter/presentation/resources/values_manager.dart';
+import 'dart:math' as math;
+import '../../../../../app/di.dart';
+import '../../../../../domain/model/models.dart';
+import '../../../../common/state_renderer/state_renderer_impl.dart';
+import '../viewmodel/notification_viewmodel.dart';
+import '../../../../resources/assets_manager.dart';
+import '../../../../resources/color_manager.dart';
+import '../../../../resources/font_manager.dart';
+import '../../../../resources/langauges_manager.dart';
+import '../../../../resources/string_manager.dart';
+import '../../../../resources/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_svg/svg.dart';
@@ -140,15 +142,23 @@ class _NotificationPageState extends State<NotificationPage> {
                   ),
                 ),
                 const SizedBox(height: AppSize.s12),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "more details ",
-                      style: theme.textTheme.labelSmall,
-                    ),
-                    SvgPicture.asset(ImageAssets.settingsRightArrowIc),
-                  ],
+                Padding(
+                  padding:
+                      const EdgeInsetsDirectional.only(end: AppPadding.p20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        AppStrings.moreDetails,
+                        style: theme.textTheme.labelSmall,
+                      ),
+                      Transform(
+                        transform: Matrix4.rotationY(isRtl() ? math.pi : 0),
+                        child:
+                            SvgPicture.asset(ImageAssets.settingsRightArrowIc),
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
@@ -156,5 +166,9 @@ class _NotificationPageState extends State<NotificationPage> {
         ],
       ),
     );
+  }
+
+  bool isRtl() {
+    return context.locale == ARABIC_LOCALE;
   }
 }

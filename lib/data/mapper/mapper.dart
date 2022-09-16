@@ -1,6 +1,6 @@
-import 'package:advanced_flutter/app/constants.dart';
-import 'package:advanced_flutter/domain/model/models.dart';
-import 'package:advanced_flutter/presentation/resources/values_manager.dart';
+import '../../app/constants.dart';
+import '../../domain/model/models.dart';
+import '../../presentation/resources/values_manager.dart';
 
 import '../response/responses.dart';
 

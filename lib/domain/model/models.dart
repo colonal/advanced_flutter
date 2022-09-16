@@ -1,4 +1,4 @@
-import 'package:advanced_flutter/data/mapper/mapper.dart';
+import '../../data/mapper/mapper.dart';
 
 class SliderObject {
   final String title;

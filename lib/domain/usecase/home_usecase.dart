@@ -1,7 +1,7 @@
-import 'package:advanced_flutter/data/network/failure.dart';
-import 'package:advanced_flutter/domain/model/models.dart';
-import 'package:advanced_flutter/domain/repository/repository.dart';
-import 'package:advanced_flutter/domain/usecase/base_usecase.dart';
+import '../../data/network/failure.dart';
+import '../model/models.dart';
+import '../repository/repository.dart';
+import 'base_usecase.dart';
 import 'package:dartz/dartz.dart';
 
 class HomeUsecase implements BaseUseCase<void, HomeObject> {

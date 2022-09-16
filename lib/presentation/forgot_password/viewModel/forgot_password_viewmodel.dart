@@ -1,10 +1,10 @@
 import 'dart:async';
 
-import 'package:advanced_flutter/domain/usecase/forgot_usecase.dart';
-import 'package:advanced_flutter/presentation/base/baseviewmodel.dart';
-import 'package:advanced_flutter/presentation/common/freezed_data_classes.dart';
-import 'package:advanced_flutter/presentation/common/state_renderer/state_renderer.dart';
-import 'package:advanced_flutter/presentation/common/state_renderer/state_renderer_impl.dart';
+import '../../../domain/usecase/forgot_usecase.dart';
+import '../../base/baseviewmodel.dart';
+import '../../common/freezed_data_classes.dart';
+import '../../common/state_renderer/state_renderer.dart';
+import '../../common/state_renderer/state_renderer_impl.dart';
 
 class ForgetViewModel extends BaseViewModel
     with ForgotViewModelInputs, ForgetViewModelOutputs {

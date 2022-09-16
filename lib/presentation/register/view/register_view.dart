@@ -1,14 +1,14 @@
 import 'dart:io';
 
-import 'package:advanced_flutter/app/app_preferences.dart';
-import 'package:advanced_flutter/app/constants.dart';
-import 'package:advanced_flutter/app/di.dart';
-import 'package:advanced_flutter/presentation/register/view_model/register_viewmodel.dart';
-import 'package:advanced_flutter/presentation/resources/assets_manager.dart';
-import 'package:advanced_flutter/presentation/resources/color_manager.dart';
-import 'package:advanced_flutter/presentation/resources/routes_manager.dart';
-import 'package:advanced_flutter/presentation/resources/string_manager.dart';
-import 'package:advanced_flutter/presentation/resources/values_manager.dart';
+import '../../../app/app_preferences.dart';
+import '../../../app/constants.dart';
+import '../../../app/di.dart';
+import '../view_model/register_viewmodel.dart';
+import '../../resources/assets_manager.dart';
+import '../../resources/color_manager.dart';
+import '../../resources/routes_manager.dart';
+import '../../resources/string_manager.dart';
+import '../../resources/values_manager.dart';
 import 'package:country_list_pick/country_list_pick.dart';
 
 import 'package:flutter/material.dart';

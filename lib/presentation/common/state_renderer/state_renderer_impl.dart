@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:advanced_flutter/app/constants.dart';
-import 'package:advanced_flutter/presentation/common/state_renderer/state_renderer.dart';
+import '../../../app/constants.dart';
+import 'state_renderer.dart';
 
 import '../../resources/string_manager.dart';
 

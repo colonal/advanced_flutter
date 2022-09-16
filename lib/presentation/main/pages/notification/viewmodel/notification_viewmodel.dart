@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'dart:ffi';
 
-import 'package:advanced_flutter/domain/model/models.dart';
-import 'package:advanced_flutter/domain/usecase/notification_usecase.dart';
-import 'package:advanced_flutter/presentation/base/baseviewmodel.dart';
-import 'package:advanced_flutter/presentation/common/state_renderer/state_renderer.dart';
-import 'package:advanced_flutter/presentation/common/state_renderer/state_renderer_impl.dart';
-import 'package:advanced_flutter/presentation/resources/assets_manager.dart';
+import '../../../../../domain/model/models.dart';
+import '../../../../../domain/usecase/notification_usecase.dart';
+import '../../../../base/baseviewmodel.dart';
+import '../../../../common/state_renderer/state_renderer.dart';
+import '../../../../common/state_renderer/state_renderer_impl.dart';
+import '../../../../resources/assets_manager.dart';
 import 'package:intl/intl.dart';
 import 'package:rxdart/rxdart.dart';
 

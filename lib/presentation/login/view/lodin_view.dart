@@ -1,7 +1,7 @@
-import 'package:advanced_flutter/app/di.dart';
-import 'package:advanced_flutter/presentation/common/state_renderer/state_renderer_impl.dart';
-import 'package:advanced_flutter/presentation/resources/assets_manager.dart';
-import 'package:advanced_flutter/presentation/resources/string_manager.dart';
+import '../../../app/di.dart';
+import '../../common/state_renderer/state_renderer_impl.dart';
+import '../../resources/assets_manager.dart';
+import '../../resources/string_manager.dart';
 import 'package:flutter/scheduler.dart';
 
 import '../../../app/app_preferences.dart';
@@ -36,10 +36,14 @@ class _LoginViewState extends State<LoginView> {
 
     _viewModel.isUserLoggedInSuccessfullyStreamController.stream
         .listen((isLoggedIn) {
-      SchedulerBinding.instance.addPersistentFrameCallback((_) {
-        _appsPreferences.setUserLoggedIn();
-        Navigator.of(context).pushReplacementNamed(Routes.mainRoute);
-      });
+      if (isLoggedIn) {
+        SchedulerBinding.instance.addPostFrameCallback((_) {
+          _appsPreferences.setUserLoggedIn();
+          _viewModel.isUserLoggedInSuccessfullyStreamController.add(false);
+          Navigator.of(context).pushNamedAndRemoveUntil(
+              Routes.mainRoute, (Route<dynamic> route) => false);
+        });
+      }
     });
   }
 
@@ -108,6 +112,7 @@ class _LoginViewState extends State<LoginView> {
                     builder: (context, snapshot) {
                       return TextFormField(
                         keyboardType: TextInputType.visiblePassword,
+                        obscureText: true,
                         controller: _userPasswordController,
                         decoration: InputDecoration(
                             hintText: AppStrings.password.tr(),

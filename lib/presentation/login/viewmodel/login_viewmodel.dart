@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:advanced_flutter/presentation/common/state_renderer/state_renderer.dart';
-import 'package:advanced_flutter/presentation/common/state_renderer/state_renderer_impl.dart';
+import '../../common/state_renderer/state_renderer.dart';
+import '../../common/state_renderer/state_renderer_impl.dart';
 
 import '../../base/baseviewmodel.dart';
 
@@ -34,12 +34,11 @@ class LoginViewModel extends BaseViewModel
     _userNameStreamController.close();
     _passwordStreamController.close();
     _areAllInputsValidStreamController.close();
+    isUserLoggedInSuccessfullyStreamController.close();
   }
 
   @override
   void start() {
-    // TODO: implement start
-
     inputState.add(ContentState());
   }
 
@@ -74,17 +73,15 @@ class LoginViewModel extends BaseViewModel
         LoadingState(stateRendererType: StateRendererType.popupLoadingStat));
     (await _loginUseCase.execute(
             LoginUsecaseInput(loginObject.userName, loginObject.password)))
-        .fold(
-            (failure) => {
-                  // left -> failure
-                  inputState.add(ErrorState(
-                      stateRendererType: StateRendererType.popupErrorstate,
-                      message: failure.message)),
-                  print(failure.message)
-                }, (data) {
+        .fold((failure) {
+      // left -> failure
+      inputState.add(
+        ErrorState(
+            stateRendererType: StateRendererType.popupErrorstate,
+            message: failure.message),
+      );
+    }, (data) {
       // right -> data (success)
-      print(data.customer?.name);
-
       //  content
       inputState.add(ContentState());
 

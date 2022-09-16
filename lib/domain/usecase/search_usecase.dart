@@ -1,9 +1,9 @@
-import 'package:advanced_flutter/data/network/requests.dart';
+import '../../data/network/requests.dart';
 import 'package:dartz/dartz.dart';
 
-import 'package:advanced_flutter/data/network/failure.dart';
-import 'package:advanced_flutter/domain/model/models.dart';
-import 'package:advanced_flutter/domain/usecase/base_usecase.dart';
+import '../../data/network/failure.dart';
+import '../model/models.dart';
+import 'base_usecase.dart';
 
 import '../repository/repository.dart';
 

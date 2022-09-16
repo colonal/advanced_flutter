@@ -1,9 +1,9 @@
-import 'package:advanced_flutter/presentation/resources/assets_manager.dart';
-import 'package:advanced_flutter/presentation/resources/color_manager.dart';
-import 'package:advanced_flutter/presentation/resources/font_manager.dart';
-import 'package:advanced_flutter/presentation/resources/string_manager.dart';
-import 'package:advanced_flutter/presentation/resources/styles_manager.dart';
-import 'package:advanced_flutter/presentation/resources/values_manager.dart';
+import '../../resources/assets_manager.dart';
+import '../../resources/color_manager.dart';
+import '../../resources/font_manager.dart';
+import '../../resources/string_manager.dart';
+import '../../resources/styles_manager.dart';
+import '../../resources/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:easy_localization/easy_localization.dart';

@@ -71,4 +71,5 @@ class AppStrings {
   static const String cacheError = "cache_error";
   static const String noInternetError = "no_internet_error";
   static const String searchServise = "search_servise";
+  static const String moreDetails = "more_details";
 }

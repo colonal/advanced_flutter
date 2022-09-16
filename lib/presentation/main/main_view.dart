@@ -1,10 +1,10 @@
-import 'package:advanced_flutter/presentation/main/pages/home/view/home_page.dart';
-import 'package:advanced_flutter/presentation/main/pages/notification/view/notification_page.dart';
-import 'package:advanced_flutter/presentation/main/pages/search/view/search_page.dart';
-import 'package:advanced_flutter/presentation/main/pages/setting/setting_page.dart';
-import 'package:advanced_flutter/presentation/resources/color_manager.dart';
-import 'package:advanced_flutter/presentation/resources/string_manager.dart';
-import 'package:advanced_flutter/presentation/resources/values_manager.dart';
+import 'pages/home/view/home_page.dart';
+import 'pages/notification/view/notification_page.dart';
+import 'pages/search/view/search_page.dart';
+import 'pages/setting/setting_page.dart';
+import '../resources/color_manager.dart';
+import '../resources/string_manager.dart';
+import '../resources/values_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 

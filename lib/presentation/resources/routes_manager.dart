@@ -1,12 +1,12 @@
-import 'package:advanced_flutter/app/di.dart';
-import 'package:advanced_flutter/presentation/forgot_password/view/forgot_password_view.dart';
-import 'package:advanced_flutter/presentation/login/view/lodin_view.dart';
-import 'package:advanced_flutter/presentation/main/main_view.dart';
-import 'package:advanced_flutter/presentation/on_boarding/view/on_bparding_view.dart';
-import 'package:advanced_flutter/presentation/register/view/register_view.dart';
-import 'package:advanced_flutter/presentation/resources/string_manager.dart';
-import 'package:advanced_flutter/presentation/splash/splash_view.dart';
-import 'package:advanced_flutter/presentation/store_details/view/store_details_view.dart';
+import '../../app/di.dart';
+import '../forgot_password/view/forgot_password_view.dart';
+import '../login/view/lodin_view.dart';
+import '../main/main_view.dart';
+import '../on_boarding/view/on_bparding_view.dart';
+import '../register/view/register_view.dart';
+import 'string_manager.dart';
+import '../splash/splash_view.dart';
+import '../store_details/view/store_details_view.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 

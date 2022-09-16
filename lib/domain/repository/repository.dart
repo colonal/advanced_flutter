@@ -1,6 +1,6 @@
-import 'package:advanced_flutter/data/network/failure.dart';
-import 'package:advanced_flutter/data/network/requests.dart';
-import 'package:advanced_flutter/domain/model/models.dart';
+import '../../data/network/failure.dart';
+import '../../data/network/requests.dart';
+import '../model/models.dart';
 import 'package:dartz/dartz.dart';
 
 abstract class Repository {

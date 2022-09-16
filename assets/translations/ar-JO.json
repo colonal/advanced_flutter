@@ -63,5 +63,6 @@
     "password_hint_message": "يجب أن تكون كلمة المرور 6 أحرف على الأقل" ,
     "photo_from_galley": "صورة من الجاليري",
     "photo_from_camera": "صورة من الكاميرا",
-    "search_servise":"بحث ..."
+    "search_servise":"بحث ...",
+    "more_details":"المزيد من التفاصيل "
   }

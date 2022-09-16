@@ -1,14 +1,14 @@
-import 'package:advanced_flutter/data/data_sourse/local_data_source.dart';
-import 'package:advanced_flutter/data/network/error_handler.dart';
-import 'package:advanced_flutter/data/network/network_info.dart';
-import 'package:advanced_flutter/data/response/responses.dart';
+import '../data_sourse/local_data_source.dart';
+import '../network/error_handler.dart';
+import '../network/network_info.dart';
+import '../response/responses.dart';
 import 'package:dartz/dartz.dart';
 
-import 'package:advanced_flutter/data/data_sourse/remotr_data_sourse.dart';
-import 'package:advanced_flutter/data/network/failure.dart';
-import 'package:advanced_flutter/data/network/requests.dart';
-import 'package:advanced_flutter/domain/model/models.dart';
-import 'package:advanced_flutter/domain/repository/repository.dart';
+import '../data_sourse/remotr_data_sourse.dart';
+import '../network/failure.dart';
+import '../network/requests.dart';
+import '../../domain/model/models.dart';
+import '../../domain/repository/repository.dart';
 
 import '../mapper/mapper.dart';
 

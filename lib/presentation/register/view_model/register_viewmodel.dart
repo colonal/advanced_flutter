@@ -1,11 +1,11 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:advanced_flutter/app/functions.dart';
-import 'package:advanced_flutter/domain/usecase/register_usecase.dart';
-import 'package:advanced_flutter/presentation/base/baseviewmodel.dart';
-import 'package:advanced_flutter/presentation/common/freezed_data_classes.dart';
-import 'package:advanced_flutter/presentation/resources/string_manager.dart';
+import '../../../app/functions.dart';
+import '../../../domain/usecase/register_usecase.dart';
+import '../../base/baseviewmodel.dart';
+import '../../common/freezed_data_classes.dart';
+import '../../resources/string_manager.dart';
 
 import '../../common/state_renderer/state_renderer.dart';
 import '../../common/state_renderer/state_renderer_impl.dart';
